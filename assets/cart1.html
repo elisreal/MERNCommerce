@@ -57,7 +57,7 @@
 				    <div class="tab-content">
 
 				    	<!-- Shipping and billing information -->
-				        <div class="tab-pane active" id="tab-one">
+				        <div class="tab-pane active" id="tabOne">
 				            <div class="row tabBody">
 
 				            	<!-- Forms Here -->
@@ -110,78 +110,142 @@
 										<!-- Shipping Details Form -->
 										<h1 class="shippingDetails">Shipping Details</h1>
 
-										<div class="row">
-					            			<div class="col">
-					            				<label for="stAddress">
-					            					Street Address
-					            				</label>
-												<input type="address" class="form-control" id="address">
-											</div>
-										</div>
+										<form>
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label for="inputEmail4">Email</label>
+													<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+												</div>
+										    	<div class="form-group col-md-6">
+										      		<label for="inputPassword4">Password</label>
+										      		<input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+										    	</div>
+										  		</div>
+										  		<div class="form-group">
+										    		<label for="inputAddress">Address</label>
+										    		<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+										  		</div>
+										  		<div class="form-group">
+										    		<label for="inputAddress2">Address 2</label>
+										    		<input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+										  		</div>
+										  		<div class="form-row">
+										    		<div class="form-group col-md-6">
+										      			<label for="inputCity">City</label>
+										      		<input type="text" class="form-control" id="inputCity">
+										    	</div>
+										    	<div class="form-group col-md-4">
+										      		<label for="inputState">State</label>
+										      		<select id="inputState" class="form-control">
+										        		<option selected>Choose...</option>
+										        		<option>...</option>
+										      		</select>
+										    	</div>
+										    	<div class="form-group col-md-2">
+										      		<label for="inputZip">Zip</label>
+										      		<input type="text" class="form-control" id="inputZip">
+										    	</div>
+										    	<div class="form-group col">
+										    		<div class="form-check">
+												    	<input class="form-check-input" type="checkbox" id="sameBilling">
+												    	<label class="form-check-label" for="gridCheck">
+												        Same as Billing
+												    	</label>
+												    </div>
+										    	</div>
+										  	</div>
+										</form>
+										<hr>
+										<h1 class="shippingDetails">Billing Details</h1>
 
-										<div class="row">
-					            			<div class="col">
-					            				<label for="address2">
-					            					Apt./Suite/Floor
-					            				</label>
-												<input type="address" class="form-control" id="address">
-											</div>
-										</div>
-										<div class="row">
-											<div class="col">
-					            				<label for="city">
-					            					City
-					            				</label>
-												<input type="city" class="form-control" id="city">
-											</div>
-
-											<div class="col">
-					            				<label for="emailConf">Confirm Email
-					            				</label>
-												<input type="email" class="form-control" id="emailConf">
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col">
-					            				<label for="phone">
-					            					Phone
-					            				</label>
-												<input type="phone" class="form-control" id="phone">
-											</div>
-										</div>
-
-
+										<form>
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label for="inputEmail4">Email</label>
+													<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+												</div>
+										    	<div class="form-group col-md-6">
+										      		<label for="inputPassword4">Password</label>
+										      		<input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+										    	</div>
+										  		</div>
+										  		<div class="form-group">
+										    		<label for="inputAddress">Address</label>
+										    		<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+										  		</div>
+										  		<div class="form-group">
+										    		<label for="inputAddress2">Address 2</label>
+										    		<input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+										  		</div>
+										  		<div class="form-row">
+										    		<div class="form-group col-md-6">
+										      			<label for="inputCity">City</label>
+										      		<input type="text" class="form-control" id="inputCity">
+										    	</div>
+										    	<div class="form-group col-md-4">
+										      		<label for="inputState">State</label>
+										      		<select id="inputState" class="form-control">
+										        		<option selected>Choose...</option>
+										        		<option>...</option>
+										      		</select>
+										    	</div>
+										    	<div class="form-group col-md-2">
+										      		<label for="inputZip">Zip</label>
+										      		<input type="text" class="form-control" id="inputZip">
+										    	</div>
+										  	</div>
+										  <button id="continueSB" type="submit" class="btn btn-primary fullWidthBtn">Continue</button>
+										</form>
 									</div>
 				            	</div>
 								
 								<!-- Cart Summary -->
-				            	<div class="col-4 card-body">
-				            		<div class="row">
-				            			<div class="col-6">
-				            				<img class="cartImg" src="#" alt="#">
-				            			</div>
-				            			<div class="col-6">
-				            				<p id="#" class="#">
-				            					Item Name Here
-				            				</p>
-				            				<p id="#" class="#">
-				            					Size / QTY: ??
-				            				</p>
-				            				<p id="#" class="#">
-				            					$99.00
-				            				</p>
-				            			</div>
-				            		</div>
-				            	</div>
+								<aside class="col-4 sidebar fixedsticky">
+									<h1 class="contact">Cart Summary</h1>
+									<div class="card">
+						            	<div class="card-body">
+						            		<div class="row">
+						            			<div class="col-6">
+						            				<img class="cartImg" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt="#">
+						            			</div>
+						            			<div class="col-6">
+						            				<p id="#" class="#">
+						            					Item Name Here
+						            				</p>
+						            				<p id="#" class="#">
+						            					Size / Qty: ??
+						            				</p>
+						            			</div>
+						            		</div>
+						            		<hr>
+						            		<div class="row">
+						            			<div class="col">
+						            				<p id="#" class="#">
+						            					Subtotal:
+						            					<span id="subTotal" class="sub">$99.00</span>
+						            				</p>
+						            				<p id="#" class="#">
+						            					Shipping:
+						            					<span id="subTotal" class="sub">–</span>
+						            				</p>
+						            				<hr>
+						            				<p id="#" class="#">
+						            					Total:
+						            					<span id="subTotal" class="sub">$99.00</span>
+						            				</p>
+						            			</div>
+						            		</div>
+						            	</div>
+						            </div>
+					            </aside>
 				            </div>
 				        </div>
 
 
-				        <div class="tab-pane" id="tab-two">
+				        <div class="tab-pane" id="tabTwo">
 				            Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. 
 				        </div> 
-				        <div class="tab-pane" id="tab-three">
+				        <div class="tab-pane" id="tabThree">
 				        	Im in Tab 333333333333
 				        </div> 
 				    </div> 

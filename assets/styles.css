@@ -58,7 +58,44 @@ div.footer {
 	padding-right: 0;
 }
 
+.sub {
+	font-weight: bold;
+	float: right;
+}
+
+.form-check-input {
+	margin-left: 0;
+}
+
+.cartSummary {
+	/* something to make the card floating */;
+}
+
+.fullWidthBtn {
+	width: 100%;
+}
+
+div.col.zipCode {
+	width: ;
+}
+
 hr {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+@media (min-width:43.75em) {
+
+	.sidebar {
+		display: inline-block;
+		width: 25%;
+		vertical-align: top;
+	}
+
+	/* loaded fixed-sticky polyfill
+	https://github.com/filamentgroup/fixed-sticky */
+	.fixedsticky {
+		top: 0;
+	}
+
 }
