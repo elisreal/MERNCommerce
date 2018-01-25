@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MERNCommerce</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- CSS Styles -->
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<!-- Navbar goes here -->
+	<nav class="navbar">
+		<a class="navbar-brand" href="layout.html">MERN Commerce</a>
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+				<a class="nav-link" href="layout.html">Home</a>
+			</li>
+			<li class="nav-item">
+		    	<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+		    	<a class="nav-link" href="#">Admin</a>
+			</li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Cart</a>
+		  </li>
+		</ul>
+	</nav>
+
+	<!-- Header goes here --> 
+	<!-- Might want to throw a carousel in here to get fancy -->
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container text-center">
+			<h1 class="display-4">MERNCommerce</h1>
+			<p class="lead">A Server-side Ecommerce tool for Front-end developers</p>
+		</div>
+	</div>
+
+	<!-- Products will load here -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="tabbable full-width-tabs">
+				    <ul class="nav nav-tabs text-center">
+				        <li class="active take-all-space-you-can">
+				        	<a href="#tabOne" data-toggle="tab">Billing</a>
+				        </li>
+				        <li class="take-all-space-you-can">
+				        	<a href="#tabTwo" data-toggle="tab">Shipping</a>
+				        </li>
+				        <li class="take-all-space-you-can">
+				        	<a href="#tabThree" data-toggle="tab">Checkout</a>
+				        </li>
+				    </ul>
+				    <div class="tab-content">
+
+				    	<!-- Shipping and billing information -->
+				        <div class="tab-pane active" id="tab-one">
+				            <div class="row tabBody">
+
+				            	<!-- Forms Here -->
+				            	<div class="col-8">
+									<div class="form-group">
+
+										<!-- Contact Details Form -->
+										<h1 class="contact">Contact Details</h1>
+										<div class="row">
+					            			<div class="col">
+					            				<label for="firstName">
+					            					First Name
+					            				</label>
+												<input type="name" class="form-control" id="firstName">
+											</div>
+
+											<div class="col">
+					            				<label for="lastName">
+					            					Last Name
+					            				</label>
+												<input type="name" class="form-control" id="lastName">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+					            				<label for="email">
+					            					Email
+					            				</label>
+												<input type="email" class="form-control" id="email">
+											</div>
+
+											<div class="col">
+					            				<label for="emailConf">Confirm Email
+					            				</label>
+												<input type="email" class="form-control" id="emailConf">
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col">
+					            				<label for="phone">
+					            					Phone
+					            				</label>
+												<input type="phone" class="form-control" id="phone">
+											</div>
+										</div>
+
+										<hr>
+
+										<!-- Shipping Details Form -->
+										<h1 class="shippingDetails">Shipping Details</h1>
+
+										<div class="row">
+					            			<div class="col">
+					            				<label for="stAddress">
+					            					Street Address
+					            				</label>
+												<input type="address" class="form-control" id="address">
+											</div>
+										</div>
+
+										<div class="row">
+					            			<div class="col">
+					            				<label for="address2">
+					            					Apt./Suite/Floor
+					            				</label>
+												<input type="address" class="form-control" id="address">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+					            				<label for="city">
+					            					City
+					            				</label>
+												<input type="city" class="form-control" id="city">
+											</div>
+
+											<div class="col">
+					            				<label for="emailConf">Confirm Email
+					            				</label>
+												<input type="email" class="form-control" id="emailConf">
+											</div>
+										</div>
+
+										<div class="row">
+											<div class="col">
+					            				<label for="phone">
+					            					Phone
+					            				</label>
+												<input type="phone" class="form-control" id="phone">
+											</div>
+										</div>
+
+
+									</div>
+				            	</div>
+								
+								<!-- Cart Summary -->
+				            	<div class="col-4 card-body">
+				            		<div class="row">
+				            			<div class="col-6">
+				            				<img class="cartImg" src="#" alt="#">
+				            			</div>
+				            			<div class="col-6">
+				            				<p id="#" class="#">
+				            					Item Name Here
+				            				</p>
+				            				<p id="#" class="#">
+				            					Size / QTY: ??
+				            				</p>
+				            				<p id="#" class="#">
+				            					$99.00
+				            				</p>
+				            			</div>
+				            		</div>
+				            	</div>
+				            </div>
+				        </div>
+
+
+				        <div class="tab-pane" id="tab-two">
+				            Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. Howdy, I'm in Tab 2. 
+				        </div> 
+				        <div class="tab-pane" id="tab-three">
+				        	Im in Tab 333333333333
+				        </div> 
+				    </div> 
+				</div> <!-- /tabbable -->
+			</div>
+		</div>
+
+		<!-- Footer Goes Here -->
+
+		<div class="footer">
+			<div class="row">
+				<div class="col-6">
+					<h1 class="text-left">MERNCommerce</h1>
+					<p class="text-left">555 Main Street<br>
+					Washington, DC 20009</p>
+				</div>
+				<div class="col-6 text-right">
+					<a class="btn btn-outline-primary" href="#" role="button">Newsletter Sign-up!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

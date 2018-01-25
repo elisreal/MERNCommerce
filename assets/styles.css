@@ -1,0 +1,64 @@
+.row {
+	margin-bottom: 20px;
+}
+
+div.footer {
+	margin-top: 40px;
+}
+
+.footer {
+	border-top: 1px solid rgba(0,0,0,.125);
+	padding: 30px 0px;
+}
+
+.full-width-tabs > ul.nav.nav-tabs {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.full-width-tabs > ul.nav.nav-tabs > li {
+    float: none;
+    display: table-cell;
+}
+
+.full-width-tabs > ul.nav.nav-tabs > li > a {
+    text-align: center;
+}
+
+.take-all-space-you-can{
+    width:100%;
+}
+
+.tabBody {
+	margin-top: 30px;
+}
+
+.cartImg {
+	width: 100px;
+	height: 100px;
+}
+
+.remove {
+	float: right;
+}
+
+.first {
+	width: 100px;
+	padding-right: 12px !important;
+}
+
+.second {
+	width: 350px;
+	padding-left: 12px !important;
+}
+
+.table td, .table th {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

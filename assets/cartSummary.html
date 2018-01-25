@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MERNCommerce</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- CSS Styles -->
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+	<!-- Navbar goes here -->
+	<nav class="navbar">
+		<a class="navbar-brand" href="layout.html">MERN Commerce</a>
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+				<a class="nav-link" href="layout.html">Home</a>
+			</li>
+			<li class="nav-item">
+		    	<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+		    	<a class="nav-link" href="#">Admin</a>
+			</li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#">Cart</a>
+		  </li>
+		</ul>
+	</nav>
+
+	<!-- Header goes here --> 
+	<!-- Might want to throw a carousel in here to get fancy -->
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container text-center">
+			<h1 class="display-4">MERNCommerce</h1>
+			<p class="lead">A Server-side Ecommerce tool for Front-end developers</p>
+		</div>
+	</div>
+
+	<!-- Products will load here -->
+	<div class="container">
+		<div class="row">
+			<div class="col">
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="first" scope="col">Item</th>
+							<th class="second" scope="col"></th>
+							<th scope="col">Price</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Total</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="first" scope="row"><img class="cartImg" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt=" "></th>
+							<td class="second">Product Name<br>Size</td>
+							<td>$99.00</td>
+							<td>1</td>
+							<td>$99.00</td>
+							<td><a class="btn btn-outline-primary remove" href="#" role="button">REMOVE</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div> <!--this ends the second row-->	
+		<!-- Footer Goes Here -->
+		<div class="footer">
+			<div class="row">
+				<div class="col-6">
+					<h1 class="text-left">MERNCommerce</h1>
+					<p class="text-left">555 Main Street<br>
+					Washington, DC 20009</p>
+				</div>
+				<div class="col-6 text-right">
+					<a class="btn btn-outline-primary" href="#" role="button">Newsletter Sign-up!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="script.js"></script>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
