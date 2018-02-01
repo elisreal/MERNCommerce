@@ -26,9 +26,7 @@ module.exports = {
       mdqty: req.body.smqty,
       lgqty: req.body.smqty,
       totalqty: req.body.smqty, 
-      price: req.body.smqty,
-      smqty: req.body.smqty,
-      smqty: req.body.smqty,
+      price: req.body.smqty
     };
     db.Product
       .create(product)
