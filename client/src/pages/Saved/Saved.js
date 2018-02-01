@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import Panel from "../../components/Panel";
-import Article from "../../components/Article";
+import Article from "../../components/Product";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
@@ -9,15 +9,15 @@ import { List } from "../../components/List";
 
 class Saved extends Component {
   state = {
-    articles: []
+    products: []
   };
 
   componentDidMount() {
     this.getSavedArticles();
   }
 
-  getSavedArticles = () => {
-    API.getSavedArticles()
+  getSavedProducts = () => {
+    API.getSavedProducts()
       .then(res =>
         this.setState({
           articles: res.data
@@ -26,53 +26,67 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
-  handleArticleDelete = id => {
-    API.deleteArticle(id).then(res => this.getSavedArticles());
+  handleProductsDelete = id => {
+    API.deleteProduct(id).then(res => this.getSavedProducts());
   };
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="md-12">
+      <div class='container'>
+        <div class='row'>
+          <div class='col-12'>
             <Jumbotron>
               <h1 className="text-center">
-                <strong>(ReactJS) New York Times Article Scrubber</strong>
+                <strong>MERNCommerce</strong>
               </h1>
               <h2 className="text-center">
-                Search for and save articles of interest.
+                Whatever Dude
               </h2>
             </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-            <Panel title="Saved Articles" icon="download">
-              {this.state.articles.length ? (
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-12'>
+            <Panel title="Saved Products" icon="download">
+              {this.state.products.length ? (
                 <List>
-                  {this.state.articles.map(article => (
-                    <Article
-                      key={article._id}
-                      _id={article._id}
-                      title={article.title}
-                      url={article.url}
-                      date={article.date}
-                      handleClick={this.handleArticleDelete}
-                      buttonText="Delete Article"
+                  {this.state.products.map(product => (
+                    <Product
+                      key={prodcut._id}
+                      _id={product._id}
+                      title={product.title}
+                      url={product.url}
+                      date={product.date}
+                      handleClick={this.handleProductDelete}
+                      buttonText="Delete Product"
                       saved
                     />
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">No Saved Articles</h2>
+                <h2 className="text-center">No Saved Products</h2>
               )}
             </Panel>
-          </Col>
-        </Row>
+          </div>
+        </div>
         <Footer />
-      </Container>
+      </div>
     );
   }
 }
 
 export default Saved;
+
+
+
+//
+
+// handleFormSubmit = event => {
+//     event.preventDefault();
+//     this.getProducts();
+//   };
+
+//   handleProductsSave = id => {
+//     const product = this.state.products.find(product => product._id === id);
+//     API.saveProduct(product).then(res => this.getProducts());
+//   };
