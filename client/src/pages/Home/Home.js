@@ -4,47 +4,39 @@ import PCard from "../../components/PCard";
 import API from "../../utils/API";
 
 class Home extends Component {
-  state = {
-    articles: [],
-    q: "",
-    start_year: "",
-    end_year: "",
-    message: "Search For Articles To Begin!"
-  };
+  // state = {
+  //   products: [],
+  //   q: "",
+  //   start_year: "",
+  //   end_year: "",
+  //   message: "Search For Products"
+  // };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
-  getArticles = () => {
-    API.getArticles({
+  getProducts = () => {
+    API.getProducts({
       q: this.state.q,
       start_year: this.state.start_year,
       end_year: this.state.end_year
     })
       .then(res =>
         this.setState({
-          articles: res.data,
+          products: res.data,
           message: !res.data.length
-            ? "No New Articles Found, Try a Different Query"
+            ? "No New Products Found, Try a Different Query"
             : ""
         })
       )
       .catch(err => console.log(err));
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.getArticles();
-  };
-
-  handleArticleSave = id => {
-    const article = this.state.articles.find(article => article._id === id);
-    API.saveArticle(article).then(res => this.getArticles());
-  };
+  
 
   render() {
     return (
