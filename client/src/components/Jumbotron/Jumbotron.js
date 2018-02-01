@@ -1,5 +1,4 @@
 import React from "react";
-import "./Jumbotron.css";
 
 const Jumbotron = ({ children }) =>
   <div class="jumbotron jumbotron-fluid">

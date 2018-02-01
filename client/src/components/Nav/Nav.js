@@ -4,10 +4,10 @@ import "./Nav.css";
 
 const Nav = () => (
   <nav class="navbar">
-    <a class="navbar-brand" href="layout.html">MERN Commerce</a>
+    <a class="navbar-brand" href={'Home'}>MERN Commerce</a>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link" href="layout.html">Home</a>
+        <a class="nav-link" href={'Home'}>Home</a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="#">About</a>
