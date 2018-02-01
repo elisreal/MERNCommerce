@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
+import Footer from "./components/Footer";
 
 
 const App = () =>
@@ -15,6 +16,7 @@ const App = () =>
         <Route exact path="/" component={Home} />
         <Route exact path="/admin" component={Admin} />
       </Switch>
+      <Footer />
     </div>
   </Router>;
 
