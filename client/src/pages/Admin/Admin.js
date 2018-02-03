@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
-import Panel from "../../components/Panel";
-import Article from "../../components/Product";
-import Footer from "../../components/Footer";
+import Product from "../../components/Product";
 import API from "../../utils/API";
 import { List } from "../../components/List";
+
 
 class Admin extends Component {
   state = {
@@ -17,11 +15,19 @@ class Admin extends Component {
     price: ""
   };
 
+  componentDidMount() {
+    this.getProducts();
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
+  };
+
+  handleProductDelete = id => {
+    API.deleteProduct(id).then(res => this.getProducts());
   };
 
   getPoducts = () => {
@@ -37,7 +43,7 @@ class Admin extends Component {
         this.setState({
           products: res.data,
           message: !res.data.length
-            ? "No New Productss Found, Try a Different Query"
+            ? "No New Products Found, Try a Different Query"
             : ""
         })
       )
@@ -60,7 +66,7 @@ class Admin extends Component {
           <div class="row">
 
             <div class="col s12" id="admin">
-              <form handleInputChange={this.handleInputChange} 
+              <form handleInputChange={ this.handleInputChange } 
                 onSubmit={ this.handleFormSubmit }>
                 <div class="row">
                   <div class="input-field col s6">
@@ -129,15 +135,32 @@ class Admin extends Component {
 
               <div class="row">
                 <div class="col s12">
-                  <div id="loadProducts"></div>
+                  <div id="loadProducts">
+                  { this.state.products.length ? (
+                    <List>
+                    { this.state.products.map(product => (
+                      <Product
+                        productName={product.productName}
+                        photoUrl={product.photoUrl}
+                        price={product.price}
+                        description={product.description}
+                        size={product.size}
+                        totalQty={product.totalQty}
+                        handleProductDelete={this.handleProductDelete}
+                      />
+                    ))};
+                    </List>
+                    ) : (
+                    <h1 className="text-center">No New Products</h1>
+                  )};
+                  </div>
                 </div>
               </div>
 
 
-            </div> //this one is for the id=admin
-          </div> // first row
-          <Footer />
-        </div> // main container
+            </div> 
+          </div> 
+        </div> 
     );
   }
 }
@@ -145,15 +168,3 @@ class Admin extends Component {
 export default Admin;
 
 
-
-//
-
-// handleFormSubmit = event => {
-//     event.preventDefault();
-//     this.getProducts();
-//   };
-
-//   handleProductsSave = id => {
-//     const product = this.state.products.find(product => product._id === id);
-//     API.saveProduct(product).then(res => this.getProducts());
-//   };

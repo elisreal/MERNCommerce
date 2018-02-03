@@ -28,9 +28,6 @@ class Home extends Component {
       .then(res =>
         this.setState({
           products: res.data,
-          message: !res.data.length
-            ? "No New Products Found, Try a Different Query"
-            : ""
         })
       )
       .catch(err => console.log(err));
