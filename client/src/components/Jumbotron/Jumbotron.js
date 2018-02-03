@@ -1,10 +1,10 @@
 import React from "react";
 
 const Jumbotron = ({ children }) =>
-  <div class="jumbotron jumbotron-fluid">
-		<div class="container text-center">
-			<h1 class="display-4">MERNCommerce</h1>
-			<p class="lead">A Server-side Ecommerce tool for Front-end developers</p>
+  <div className="jumbotron jumbotron-fluid">
+		<div className="container text-center">
+			<h1 className="display-4">MERNCommerce</h1>
+			<p className="lead">A Server-side Ecommerce tool for Front-end developers</p>
 		</div>
 	</div>;
 

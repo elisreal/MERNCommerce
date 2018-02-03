@@ -15,10 +15,6 @@ class Admin extends Component {
     price: ""
   };
 
-  componentDidMount() {
-    this.getProducts();
-  }
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -62,79 +58,88 @@ class Admin extends Component {
 
   render() {
     return (
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
 
-            <div class="col s12" id="admin">
-              <form handleInputChange={ this.handleInputChange } 
-                onSubmit={ this.handleFormSubmit }>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="productName" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.productName } />
-                    <label for="productName">Product Name</label>
+            <div className="col s12" id="admin">
+              <form onSubmit={ this.handleFormSubmit }>
+                <div className="row">
+                  <div className="input-field col s6">
+                    <label>Product Name
+                      <input id="productName" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.productName }
+                      onchange={this.handleChange} />
+                    </label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="photoUrl" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.photoUrl } />
-                    <label for="photoUrl">Product Photo URL</label>
+                  <div className="input-field col s6">
+                    <label>Product Photo URL
+                      <input id="photoUrl" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.photoUrl } 
+                      onChange={ this.handleChange } />
+                    </label>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="description" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.description } />
-                    <label for="description">Product Description</label>
+                <div className="row">
+                  <div className="input-field col s12">
+                    <label for="description">Product Description
+                      <input id="description" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.description }
+                      onChange={ this.handleChange } />
+                    </label>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="input-field col s4">
-                    <input id="price" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.price } />
-                    <label for="price">Product Price</label>
+                <div className="row">
+                  <div className="input-field col s4">
+                    <label for="price">Product Price
+                      <input id="price" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.price }
+                      onChange={ this.handleChange } />
+                    </label>
                   </div>
-                  <div class="input-field col s4">
-                    <input id="qty" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.totalQty } />
-                    <label for="qty">Product Quantity</label>
+                  <div className="input-field col s4">
+                    <label for="qty">Product Quantity
+                      <input id="qty" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.totalQty }
+                      onChange={ this.handleChange } />
+                    </label>
                   </div>
-                  <div class="input-field col s4">
-                    <input id="size" 
-                    type="text" 
-                    class="form-control"
-                    style={ this.state.size } />
-                    <label for="size">Product Size</label>
+                  <div className="input-field col s4">
+                    <label for="size">Product Size
+                      <input id="size" 
+                      type="text" 
+                      className="form-control"
+                      value={ this.state.size }
+                      onChange={ this.handleChange } />
+                    </label>
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col s12">
+                <div className="row">
+                  <div className="col s12">
                     <button id="submitBtn" 
-                    class="btn-large" 
+                    className="btn-large" 
                     type="submit" 
                     name="action"
-                    handleClick={this.handleProductSave}>Submit</button>
+                    handleClick={ this.handleProductSave }>Submit</button>
                   </div>
                 </div>
 
-              </form> //end of the form
+              </form> 
 
-            // This is where products will load 
-
-              <div class="row">
-                <div class="col s12">
+              <div className="row">
+                <div className="col s12">
                   <div id="loadProducts">
                   { this.state.products.length ? (
                     <List>
@@ -152,7 +157,7 @@ class Admin extends Component {
                     </List>
                     ) : (
                     <h1 className="text-center">No New Products</h1>
-                  )};
+                  )}
                   </div>
                 </div>
               </div>

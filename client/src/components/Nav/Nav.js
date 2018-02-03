@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => (
-  <nav class="navbar">
-    <a class="navbar-brand" href={'Home'}>MERN Commerce</a>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link" href={'Home'}>Home</a>
+  <nav className="navbar">
+    <a className="navbar-brand" href={'Home'}>MERN Commerce</a>
+    <ul className="nav justify-content-end">
+      <li className="nav-item">
+        <a className="nav-link" href={'Home'}>Home</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+      <li className="nav-item">
+          <a className="nav-link" href="#">About</a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="{'Admin'}">Admin</a>
+      <li className="nav-item">
+          <a className="nav-link" href="{'Admin'}">Admin</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cart</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Cart</a>
       </li>
     </ul>
   </nav>

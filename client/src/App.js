@@ -12,7 +12,7 @@ const App = () =>
     <div>
       <Nav />
       <Jumbotron />
-      <div class="container">
+      <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/admin" component={Admin} />

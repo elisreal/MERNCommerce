@@ -37,10 +37,9 @@ class Home extends Component {
 
   render() {
     return (
-        <div class='row'>
-        <div class='col-6'>
-            <PCard>
-            </PCard>
+        <div className='row'>
+          <div className='col-6'>
+            <PCard />
           </div>
         </div>
     );
