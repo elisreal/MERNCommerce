@@ -4,7 +4,7 @@ import filterParams from "./filterParams";
 export default {
   
   // Gets all saved products
-  getSavedProducts: function() {
+  getProducts: function() {
     return axios.get("/api/products");
   },
   // Deletes the saved product with the given id

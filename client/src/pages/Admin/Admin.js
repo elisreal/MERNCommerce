@@ -15,24 +15,32 @@ class Admin extends Component {
   //   price: ""
   // };
 
+
   constructor(props) {
     super(props);
     this.state = {
       products: [],
+      _id: 1,
       productName: "",
       photoUrl: "",
       description: "",
       size: "",
       totalQty: "",
       price: ""
-  };
+    };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.getProducts = this.getProducts.bind(this);
+    this.handleProductDelete = this.handleProductDelete.bind(this);
+  }
+
+  componentWillMount() {
+    this.getProducts()
   }
 
   handleInputChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({[event.target.name]: event.target.value});
   }
 
   // handleInputChange = event => {
@@ -47,15 +55,8 @@ class Admin extends Component {
     API.deleteProduct(id).then(res => this.getProducts());
   };
 
-  getPoducts = () => {
-    API.getProducts({
-      productName: this.state.productName,
-      photoUrl: this.state.photoUrl,
-      description: this.state.description,
-      size: this.state.size,
-      totalQty: this.state.totalQty,
-      price: this.state.price
-    })
+  getProducts = () => {
+    API.getProducts({})
       .then(res =>
         this.setState({
           products: res.data,
@@ -73,11 +74,22 @@ class Admin extends Component {
   };
 
   handleProductSave = id => {
-    const product = this.state.products.find(product => product._id === id);
+    const {productName,photoUrl,description,size,totalQty,price} = this.state;
+    const product = { 
+      _id: this.state._id,
+      productName: productName,
+      photoUrl: photoUrl,
+      description: description,
+      size: size,
+      totalQty: totalQty,
+      price: price
+    }
+    // const product = this.state.products.find(product => product._id === id);
     API.saveProduct(product).then(res => this.getProducts());
   };
 
   render() {
+    const {productName,photoUrl,description,size,totalQty,price} = this.state;
     return (
         <div className="container">
           <div className="row">
@@ -90,7 +102,8 @@ class Admin extends Component {
                       <input id="productName" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.productName }
+                      name='productName'
+                      value={productName}
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
@@ -99,7 +112,8 @@ class Admin extends Component {
                       <input id="photoUrl" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.photoUrl } 
+                      name='photoUrl'
+                      value={photoUrl} 
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
@@ -107,11 +121,12 @@ class Admin extends Component {
 
                 <div className="row">
                   <div className="input-field col s12">
-                    <label for="description">Product Description
+                    <label>Product Description
                       <input id="description" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.description }
+                      name='description'
+                      value={ description }
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
@@ -119,29 +134,32 @@ class Admin extends Component {
 
                 <div className="row">
                   <div className="input-field col s4">
-                    <label for="price">Product Price
+                    <label>Product Price
                       <input id="price" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.price }
+                      name='price'
+                      value={ price }
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
                   <div className="input-field col s4">
-                    <label for="qty">Product Quantity
+                    <label>Product Quantity
                       <input id="qty" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.totalQty }
+                      name='totalQty'
+                      value={ totalQty }
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
                   <div className="input-field col s4">
-                    <label for="size">Product Size
+                    <label>Product Size
                       <input id="size" 
                       type="text" 
                       className="form-control"
-                      value={ this.state.size }
+                      name='size'
+                      value={ size }
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
@@ -153,7 +171,7 @@ class Admin extends Component {
                     className="btn-large" 
                     type="submit" 
                     name="action"
-                    handleClick={ this.handleProductSave }>Submit</button>
+                    onClick={ this.handleProductSave }>Save Product</button>
                   </div>
                 </div>
 

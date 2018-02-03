@@ -26,7 +26,7 @@ module.exports = {
       price: req.body.price
     };
     db.Product
-      .create(product)
+      .update({ _id: product._id }, product, {upsert: true})
       .then(dbProduct => res.json(dbProduct))
       .catch(err => res.status(422).json(err));
   },
