@@ -1,0 +1,112 @@
+.row {
+	margin-bottom: 20px;
+}
+
+div.footer {
+	margin-top: 40px;
+}
+
+.footer {
+	border-top: 1px solid rgba(0,0,0,.125);
+	padding: 30px 0px;
+}
+
+.full-width-tabs > ul.nav.nav-tabs {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.full-width-tabs > ul.nav.nav-tabs > li {
+    float: none;
+    display: table-cell;
+}
+
+.full-width-tabs > ul.nav.nav-tabs > li > a {
+    text-align: center;
+}
+
+.take-all-space-you-can{
+    width:100%;
+}
+
+.tabBody {
+	margin-top: 30px;
+}
+
+.cartImg {
+	width: 100px;
+	height: 100px;
+}
+
+.remove {
+	float: right;
+}
+
+.first {
+	width: 100px;
+	padding-right: 12px !important;
+}
+
+.second {
+	width: 350px;
+	padding-left: 12px !important;
+}
+
+.table td, .table th {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.sub {
+	font-weight: bold;
+	float: right;
+}
+
+.form-check-input {
+	margin-left: 0;
+}
+
+.cartSummary {
+	/* something to make the card floating */;
+}
+
+.fullWidthBtn {
+	width: 100%;
+}
+
+input#customCheck1.checkRadio {
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+div.col.col-lg-6.card.method {
+	margin-top: 20px;
+	padding: 20px;
+	width: 80%;
+}
+
+div.custom-control.custom-checkbox {
+	padding: 0;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+@media (min-width:43.75em) {
+
+	.sidebar {
+		display: inline-block;
+		width: 25%;
+		vertical-align: top;
+	}
+
+	/* loaded fixed-sticky polyfill
+	https://github.com/filamentgroup/fixed-sticky */
+	.fixedsticky {
+		top: 0;
+	}
+
+}

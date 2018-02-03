@@ -5,22 +5,11 @@ import { List } from "../../components/List";
 
 
 class Admin extends Component {
-  // state = {
-  //   products: [],
-  //   productName: "",
-  //   photoUrl: "",
-  //   description: "",
-  //   size: "",
-  //   totalQty: "",
-  //   price: ""
-  // };
-
-
   constructor(props) {
     super(props);
     this.state = {
       products: [],
-      _id: 1,
+      id: 1,
       productName: "",
       photoUrl: "",
       description: "",
@@ -28,7 +17,6 @@ class Admin extends Component {
       totalQty: "",
       price: ""
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.getProducts = this.getProducts.bind(this);
@@ -42,14 +30,6 @@ class Admin extends Component {
   handleInputChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
-
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
 
   handleProductDelete = id => {
     API.deleteProduct(id).then(res => this.getProducts());
@@ -73,10 +53,9 @@ class Admin extends Component {
     this.getProducts();
   };
 
-  handleProductSave = id => {
+  handleProductSave = () => {
     const {productName,photoUrl,description,size,totalQty,price} = this.state;
-    const product = { 
-      _id: this.state._id,
+    const product = {
       productName: productName,
       photoUrl: photoUrl,
       description: description,
@@ -99,8 +78,8 @@ class Admin extends Component {
                 <div className="row">
                   <div className="input-field col s6">
                     <label>Product Name
-                      <input id="productName" 
-                      type="text" 
+                      <input id="productName"
+                      type="text"
                       className="form-control"
                       name='productName'
                       value={productName}
@@ -109,11 +88,11 @@ class Admin extends Component {
                   </div>
                   <div className="input-field col s6">
                     <label>Product Photo URL
-                      <input id="photoUrl" 
-                      type="text" 
+                      <input id="photoUrl"
+                      type="text"
                       className="form-control"
                       name='photoUrl'
-                      value={photoUrl} 
+                      value={photoUrl}
                       onChange={ this.handleInputChange } />
                     </label>
                   </div>
@@ -122,8 +101,8 @@ class Admin extends Component {
                 <div className="row">
                   <div className="input-field col s12">
                     <label>Product Description
-                      <input id="description" 
-                      type="text" 
+                      <input id="description"
+                      type="text"
                       className="form-control"
                       name='description'
                       value={ description }
@@ -135,8 +114,8 @@ class Admin extends Component {
                 <div className="row">
                   <div className="input-field col s4">
                     <label>Product Price
-                      <input id="price" 
-                      type="text" 
+                      <input id="price"
+                      type="text"
                       className="form-control"
                       name='price'
                       value={ price }
@@ -145,8 +124,8 @@ class Admin extends Component {
                   </div>
                   <div className="input-field col s4">
                     <label>Product Quantity
-                      <input id="qty" 
-                      type="text" 
+                      <input id="qty"
+                      type="text"
                       className="form-control"
                       name='totalQty'
                       value={ totalQty }
@@ -155,8 +134,8 @@ class Admin extends Component {
                   </div>
                   <div className="input-field col s4">
                     <label>Product Size
-                      <input id="size" 
-                      type="text" 
+                      <input id="size"
+                      type="text"
                       className="form-control"
                       name='size'
                       value={ size }
@@ -167,15 +146,15 @@ class Admin extends Component {
 
                 <div className="row">
                   <div className="col s12">
-                    <button id="submitBtn" 
-                    className="btn-large" 
-                    type="submit" 
+                    <button id="submitBtn"
+                    className="btn-large"
+                    type="submit"
                     name="action"
                     onClick={ this.handleProductSave }>Save Product</button>
                   </div>
                 </div>
 
-              </form> 
+              </form>
 
               <div className="row">
                 <div className="col s12">
@@ -202,9 +181,9 @@ class Admin extends Component {
               </div>
 
 
-            </div> 
-          </div> 
-        </div> 
+            </div>
+          </div>
+        </div>
     );
   }
 }

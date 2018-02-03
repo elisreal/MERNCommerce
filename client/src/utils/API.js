@@ -2,7 +2,6 @@ import axios from "axios";
 import filterParams from "./filterParams";
 
 export default {
-  
   // Gets all saved products
   getProducts: function() {
     return axios.get("/api/products");

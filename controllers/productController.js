@@ -17,18 +17,25 @@ module.exports = {
   },
   create: function(req, res) {
     const product = {
-      _id: req.body._id,
       productName: req.body.productName,
       photoUrl: req.body.productPhoto,
       description: req.body.description,
       size: req.body.size,
-      totalQty: req.body.totalQty, 
+      totalQty: req.body.totalQty,
       price: req.body.price
     };
-    db.Product
-      .update({ _id: product._id }, product, {upsert: true})
+    if(product._id){
+      db.Product
+        .update({ _id: product._id }, product)
+        .then(dbProduct => res.json(dbProduct))
+        .catch(err => res.status(422).json(err));
+    }
+    else{
+      db.Product
+      .create(product)
       .then(dbProduct => res.json(dbProduct))
       .catch(err => res.status(422).json(err));
+    }
   },
   update: function(req, res) {
     db.Product
