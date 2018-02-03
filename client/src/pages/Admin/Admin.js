@@ -9,7 +9,6 @@ class Admin extends Component {
     super(props);
     this.state = {
       products: [],
-      id: 1,
       productName: "",
       photoUrl: "",
       description: "",
@@ -163,6 +162,8 @@ class Admin extends Component {
                     <List>
                     { this.state.products.map(product => (
                       <Product
+                        key={product._id}
+                        id={product._id}
                         productName={product.productName}
                         photoUrl={product.photoUrl}
                         price={product.price}

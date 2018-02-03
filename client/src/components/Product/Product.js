@@ -2,7 +2,7 @@ import React from "react";
 import { ListItem } from "../List";
 
 
-const Product = ({ _id, productName, photoUrl, price, description, size, totalQty, handleProductDelete }) => (
+const Product = ({ id, productName, photoUrl, price, description, size, totalQty, handleProductDelete }) => (
 <ListItem>
 	<div className='row'>
 		<div className='col s2'>
@@ -20,7 +20,7 @@ const Product = ({ _id, productName, photoUrl, price, description, size, totalQt
 		</div>
 		<div className='col s2'>
 			<p className='adminProd qty'>{totalQty}</p>
-			<button onClick={() => handleProductDelete(_id)} className="btn btn-primary">DELETE</button>
+			<button onClick={() => handleProductDelete(id)} className="btn btn-primary">DELETE</button>
 		</div>
 	</div>
 </ListItem>
