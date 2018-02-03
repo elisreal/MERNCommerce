@@ -12,11 +12,13 @@ const App = () =>
     <div>
       <Nav />
       <Jumbotron />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/admin" component={Admin} />
-      </Switch>
-      <Footer />
+      <div class="container">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/admin" component={Admin} />
+        </Switch>
+        <Footer />
+      </div>
     </div>
   </Router>;
 

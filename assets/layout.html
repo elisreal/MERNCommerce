@@ -42,89 +42,71 @@
 	<div class="container">
 		<div class="row">
 
-			<!-- Product1 -->
-			<div class="col-6">
-				<div class="card">
-					<img class="card-img-top img-fluid" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt="Card image cap">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-6">
-					    		<p class="card-text text-left">Item Name Here</p>
-					    		<p class="card-text text-left">$99.00</p>
-					    	</div>
-					    	<div class="col-6">
-					    		<p class="card-text text-right">
-					    			<a href="product.html" class="link">Click to View</a>
-					    		</p>
-					    	</div>
-					    </div>
-				 	</div>
-				</div>
-			</div>
-			
-			<!-- Product 2 -->
-			<div class="col-6">
-				<div class="card">
-					<img class="card-img-top img-fluid" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt="Card image cap">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-6">
-					    		<p class="card-text text-left">Item Name Here</p>
-					    		<p class="card-text text-left">$99.00</p>
-					    	</div>
-					    	<div class="col-6">
-					    		<p class="card-text text-right">
-					    			<a href="product.html" class="link">Click to View</a>
-					    		</p>
-					    	</div>
-					    </div>
-				 	</div>
-				</div>
-			</div>
+      		<div class="col s12" id="admin">
+        		<div class="row">
+              		<div class="input-field col s6">
+                  		<input id="pName" type="text" class="validate">
+                  		<label for="pName">Product Name</label>
+              		</div>
+              		<div class="input-field col s6">
+                  		<input id="photoUrl" type="text" class="validate">
+                  		<label for="photoUrl">Product Photo URL</label>
+              		</div>
+            	</div>
 
-		</div> <!--this ends the first row-->
-		
-		<div class="row">
+            	<div class="row">
+              		<div class="input-field col s12">
+                		<input id="description" type="text" class="validate">
+                		<label for="description">Product Description
+                		</label>
+              		</div>
+            	</div>
 
-			<!-- Product3 -->
-			<div class="col-6">
-				<div class="card">
-					<img class="card-img-top img-fluid" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt="Card image cap">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-6">
-					    		<p class="card-text text-left">Item Name Here</p>
-					    		<p class="card-text text-left">$99.00</p>
-					    	</div>
-					    	<div class="col-6">
-					    		<p class="card-text text-right">
-					    			<a href="product.html" class="link">Click to View</a>
-					    		</p>
-					    	</div>
-					    </div>
-				 	</div>
-				</div>
-			</div>
-			
-			<!-- Product 4 -->
-			<div class="col-6">
-				<div class="card">
-					<img class="card-img-top img-fluid" src="https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg" alt="Card image cap">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-6">
-					    		<p class="card-text text-left">Item Name Here</p>
-					    		<p class="card-text text-left">$99.00</p>
-					    	</div>
-					    	<div class="col-6">
-					    		<p class="card-text text-right">
-					    			<a href="product.html" class="link">Click to View</a>
-					    		</p>
-					    	</div>
-					    </div>
-				 	</div>
-				</div>
-			</div>
+		        <div class="row">
+		        	<div class="input-field col s4">
+		            	<input id="price" type="text" class="validate">
+		               	<label for="price">Product Price</label>
+		            </div>
+		            <div class="input-field col s4">
+		                <input id="qty" type="text" class="validate">
+		                <label for="qty">Product Quantity</label>
+		            </div>
+		            <div class="input-field col s4">
+		                <input id="size" type="text" class="validate">
+		                <label for="size">Product Size</label>
+		            </div>
+		        </div>
+
+	            <div class="row">
+	              <div class="col s12">
+	                <button id="submitBtn" class="btn-large" type="submit" name="action">Submit</button>
+	              </div>
+	            </div>
+
+            <!-- This is where products will load -->
+	            <div class="row">
+	              <div class="col s12">
+	                <div id="loadProducts">
+	                	{this.state.products.length ? (
+                  			{this.state.products.map(product => (
+                    			<Product
+                      				key={prodcut._id}
+                      				_id={product._id}
+                      				title={product.title}
+                      				url={product.url}
+                      				date={product.date}
+                      				handleClick={this.handleProductDelete}
+                      				buttonText="Delete Product"
+                      				saved
+                    			/>
+                  			)
+                  		)}
+	                </div>
+	              </div>
+	            </div>
+	        </div>
+      	</div>
+    </div>
 
 		</div> <!--this ends the second row-->	
 		<!-- Footer Goes Here -->
