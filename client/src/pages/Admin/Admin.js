@@ -5,22 +5,43 @@ import { List } from "../../components/List";
 
 
 class Admin extends Component {
-  state = {
-    products: [],
-    productName: "",
-    photoUrl: "",
-    description: "",
-    size: "",
-    totalQty: "",
-    price: ""
+  // state = {
+  //   products: [],
+  //   productName: "",
+  //   photoUrl: "",
+  //   description: "",
+  //   size: "",
+  //   totalQty: "",
+  //   price: ""
+  // };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      productName: "",
+      photoUrl: "",
+      description: "",
+      size: "",
+      totalQty: "",
+      price: ""
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  handleInputChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
 
   handleProductDelete = id => {
     API.deleteProduct(id).then(res => this.getProducts());
@@ -70,7 +91,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.productName }
-                      onchange={this.handleChange} />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                   <div className="input-field col s6">
@@ -79,7 +100,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.photoUrl } 
-                      onChange={ this.handleChange } />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                 </div>
@@ -91,7 +112,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.description }
-                      onChange={ this.handleChange } />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                 </div>
@@ -103,7 +124,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.price }
-                      onChange={ this.handleChange } />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                   <div className="input-field col s4">
@@ -112,7 +133,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.totalQty }
-                      onChange={ this.handleChange } />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                   <div className="input-field col s4">
@@ -121,7 +142,7 @@ class Admin extends Component {
                       type="text" 
                       className="form-control"
                       value={ this.state.size }
-                      onChange={ this.handleChange } />
+                      onChange={ this.handleInputChange } />
                     </label>
                   </div>
                 </div>

@@ -19,14 +19,11 @@ module.exports = {
     const product = {
       _id: req.body._id,
       productName: req.body.productName,
-      photourl: req.body.productPhoto,
+      photoUrl: req.body.productPhoto,
       description: req.body.description,
       size: req.body.size,
-      smqty: req.body.smqty,
-      mdqty: req.body.smqty,
-      lgqty: req.body.smqty,
-      totalqty: req.body.smqty, 
-      price: req.body.smqty
+      totalQty: req.body.totalQty, 
+      price: req.body.price
     };
     db.Product
       .create(product)
