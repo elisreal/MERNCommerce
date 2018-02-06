@@ -172,7 +172,7 @@ class Admin extends Component {
                         totalQty={product.totalQty}
                         handleProductDelete={this.handleProductDelete}
                       />
-                    ))};
+                    ))}
                     </List>
                     ) : (
                     <h1 className="text-center">No New Products</h1>

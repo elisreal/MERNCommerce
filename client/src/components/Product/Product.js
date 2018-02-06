@@ -1,13 +1,13 @@
 import React from "react";
 import { ListItem } from "../List";
-
+// import { Image } from "../Image";
 
 const Product = ({ id, productName, photoUrl, price, description, size, totalQty, handleProductDelete }) => (
 <ListItem>
 	<div className='row'>
 		<div className='col s2'>
 			<div className='aImg'>
-				<img src={photoUrl} className='pPhoto' alt={productName} />
+				<img source={photoUrl} className='pPhoto' alt={productName} />
 			</div>
 		</div>
 		<div className='col s2'>

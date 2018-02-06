@@ -1,23 +1,28 @@
 import React from "react";
 import PImage from "../PImage"
+import { ListItem } from "../List"
 
-const PCard = props => (
-  <div class="card">
-          <PImage />
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                  <p class="card-text text-left">Item Name Here</p>
-                  <p class="card-text text-left">$99.00</p>
-                </div>
-                <div class="col-6">
-                  <p class="card-text text-right">
-                    <a href="product.html" class="link">Click to View</a>
-                  </p>
-                </div>
-              </div>
+const PCard = ({ id, productName, photoUrl, price, description, size, totalQty}) => (
+<ListItem>
+  <div className="col-6">
+    <div className="card">
+      <img source={photoUrl} className="card-img-top img-fluid" alt={ productName } />
+      <div className="card-body">
+        <div className="row">
+          <div className="col-6">
+            <p className="card-text text-left">{ productName }</p>
+            <p className="card-text text-left">{ price }</p>
+          </div>
+          <div className="col-6">
+            <p className="card-text text-right">
+              <a href="/product/:{id}" class="link">Click to View</a>
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</ListItem>
 );
 
 export default PCard;
