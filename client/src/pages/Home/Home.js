@@ -35,8 +35,6 @@ class Home extends Component {
   }
 
 
-  
-
   render() {
     const{productName, photoUrl, description, size, totalQty, price} = this.state;
     return (
