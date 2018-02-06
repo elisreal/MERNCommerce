@@ -13,13 +13,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.12.1",
+    "nodemon": "^1.12.1"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.13.3",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
