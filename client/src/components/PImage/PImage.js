@@ -1,8 +1,10 @@
 import React from "react";
+import { ListItem } from "../List";
 
-const PImage = props => (
-	// const bagImage = 'https://photos.smugmug.com/photos/i-qRk56jh/0/X3/i-qRk56jh-X3.jpg'
-  <img class="card-img-top img-fluid" source={require('./bag.jpg')} />
+const PImage = ({ photoUrl }) => (
+	<ListItem>
+  		<img source={photoUrl} className="card-img-top img-fluid" />
+  	</ListItem>
 );
 
 export default PImage;

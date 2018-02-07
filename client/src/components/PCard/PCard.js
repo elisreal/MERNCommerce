@@ -1,12 +1,12 @@
 import React from "react";
-import PImage from "../PImage"
-import { ListItem } from "../List"
+import PImage from "../PImage";
+import { ListItem } from "../List";
 
 const PCard = ({ id, productName, photoUrl, price, description, size, totalQty}) => (
 <ListItem>
   <div className="col-6">
     <div className="card">
-      <img source={photoUrl} className="card-img-top img-fluid" alt={ productName } />
+      <PImage />
       <div className="card-body">
         <div className="row">
           <div className="col-6">
