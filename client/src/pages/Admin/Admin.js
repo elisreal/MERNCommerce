@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Product from "../../components/Product";
 import API from "../../utils/API";
+import styles from "../../components/Css";
 import { List } from "../../components/List";
+
 
 
 class Admin extends Component {

@@ -41,11 +41,16 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, 'src'),
-    filename: '[name].bundle.js',
-    publicPath: '/',
-    sourceMapFilename: '[file].map'
+    output: {
+    path: 'public',
+    filename: 'bundle.js',
+    publicPath: '/'
   },
+  //   path: path.join(__dirname, 'src'),
+  //   filename: '[name].bundle.js',
+  //   publicPath: '/',
+  //   sourceMapFilename: '[file].map'
+  // },
   devServer: {
     contentBase: path.join(__dirname, 'src'),
     port: 3000,

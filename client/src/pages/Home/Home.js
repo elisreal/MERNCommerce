@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Footer from "../../components/Footer";
 import PCard from "../../components/PCard";
 import API from "../../utils/API";
+import styles from "../../components/Css";
 import { List } from "../../components/List";
 
 class Home extends Component {
