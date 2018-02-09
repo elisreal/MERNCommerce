@@ -4,7 +4,7 @@ import { ListItem } from "../List";
 
 const PCard = ({ id, productName, photoUrl, price, description, size, totalQty}) => (
 <ListItem>
-  <div className="col-6">
+  <div className="col-6 prod">
     <div className="card">
       <PImage />
       <div className="card-body">

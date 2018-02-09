@@ -39,7 +39,7 @@ class Home extends Component {
   render() {
     const{productName, photoUrl, description, size, totalQty, price} = this.state;
     return (
-        <div className='row'>
+        <div>
           { this.state.products.length ? (
             <List>
               { this.state.products.map(product => (
