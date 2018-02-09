@@ -6,6 +6,12 @@ router.route("/")
   .get(productController.findAll)
   .post(productController.create);
 
+router
+	.route("/admin")
+	.get(productController.findAll)
+	.post(productController.create)
+	.delete(productController.remove);
+
 // Matches with "/api/products/:id"
 router
   .route("/:id")

@@ -18,7 +18,7 @@ const Product = ({ id, productName, photoUrl, price, description, size, totalQty
 		<div className='col-6'>
 			<p className='adminProd'>{description}</p>
 		</div>
-		<div className='col-2'>
+		<div className='col-2 text-right'>
 			<p className='adminProd qty'>QTY: {totalQty}</p>
 			<button onClick={() => handleProductDelete(id)} className="btn btn-primary">DELETE</button>
 		</div>

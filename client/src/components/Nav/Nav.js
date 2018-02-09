@@ -4,19 +4,19 @@ import "./Nav.css";
 
 const Nav = () => (
   <nav className="navbar">
-    <a className="navbar-brand" href={'Home'}>MERN Commerce</a>
+    <a className="navbar-brand" href={'/'}>MERN Commerce</a>
     <ul className="nav justify-content-end">
       <li className="nav-item">
-        <a className="nav-link" href={'Home'}>Home</a>
+        <Link className="nav-link" to="/">Home</Link>{' '}
       </li>
       <li className="nav-item">
-          <a className="nav-link" href="#">About</a>
+        <Link className="nav-link" to="/about">About</Link>{' '}
       </li>
       <li className="nav-item">
-          <a className="nav-link" href="{'Admin'}">Admin</a>
+        <Link className="nav-link" to="/admin">Admin</Link>{' '}
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Cart</a>
+        <Link className="nav-link" to="/cart">cart</Link>{' '}
       </li>
     </ul>
   </nav>
